@@ -2,419 +2,499 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Civil Defense</title>
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet" >
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/queries.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-      </head>
-      <body id="top">
-        <header id="home">
-          <nav>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                  <nav class="pull">
-                    <ul class="top-nav">
-                      <li><a href="#intro">Introduction <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="#responsive">Responsive Design <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="#portfolio">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="#team">Team <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="#contact">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+    <link href="docs/assets/css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     <!-- Navigation  -->
+    <div class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<!--Logo-->
+				<a href="index.html" class="navbar-brand">Civil Defense</a>
+
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class ="icon-bar"></span>
+					<span class ="icon-bar"></span>
+					<span class ="icon-bar"></span>
+				</button>
+
+				<div class="collapse navbar-collapse navHeaderCollapse">	
+                    <small>
+                        <ul class="nav navbar-nav navbar-right" >
+                            <li class="active"><a href="index.html"><i class="fa fa-home" ></i><small> Yue Yin</small></a></li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i> <small> Setting</small><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">SHAREPOINT</a></li>
+                                    <li><a href="#">TAXONOMY EDITOR</a></li>
+                                    <li><a href="#">API SERVER</a></li>
+                                    <li><a href="#">CASE STUDIES</a></li>
+
+                                </ul>
+                            </li>
+
+                    
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sign-out"> </i><small> Sign Out</small></a>
+                    
+                                
+                            </li>
+                         
+
+                        </ul>
+                    </small>
+				</div>
+			</div>
+
+		</div>
+
+      <!-- /Navigation  -->
+      
+      
+    <div class="container-fluid">
+    <div class="row" style="height:800px;">
+       <div class="col-md-2">
+           <ul class="nav nav-pills nav-stacked">
+          <li class="active" id="event">
+            <a href="#" >
+              <span class="badge pull-right">2</span>
+              Event
+            </a>
+          </li>
+           <li id="region">
+            <a href="#" >
+              <span class="badge pull-right">3</span>
+              Region
+            </a>
+          </li>
+           <li id="resource">
+            <a href="#" >
+              <span class="badge pull-right">8</span>
+              Inventory
+            </a>
+          </li>
+           <li id="inprogress">
+            <a href="#" >
+              <span class="badge pull-right">4</span>
+              In Progress
+            </a>
+          </li>
+
+        </ul>
+       </div>
+       <div class="col-md-10">
+            <div class="panel-group" id="accordion">
+            
+                 <!-- collapse1  -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse"  href="#collapse1">
+                            <large style="color:#FA6D4D;padding-right:15px;font-size:160%;">3</large> Exact Duplicates are found
+                            <i class="fa fa-chevron-down"></i> 
+                        </a>
+                      </h4>
+                    </div><!-- /collapse1 header-->
+
+
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class="panel-body">
+                       <ul>
+                            <li style="padding:10px;">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                    Cv1.pdf 
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                    <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                    <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    </div>
+                                    <small><div class="col-sm-5">87% confidence score</div></small>
+                                </div>
+                           </li>  
+                            <li style="padding:10px;">
+                                 <div class="row">
+                                    <div class="col-sm-3">
+                                    Cv2.pdf 
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <i class="fa fa-eye-slash fa-lg" href="#" style="margin-left:10px;"></i>  
+                                    <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                    <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    </div>
+                                  <small><div class="col-sm-5">95% confidence score</div></small>
+                                </div>
+
+                           </li>    
+                            <li style="padding:10px;">
+                                 <div class="row">
+                                    <div class="col-sm-3">
+                                    Cv3.pdf 
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                    <i class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></i> 
+                                    <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    <a class="fa fa-star fa-lg" href="#" style="margin-left:10px;" ></a>
+                                    </div>
+                                    <small><div class="col-sm-5">91% confidence score</div></small>
+                                </div>
+
+                           </li>    
+
+                      </ul>
+                    </div><!-- /panel-body -->
+                </div>
+            </div><!-- /collpase1-->
+
+
+
+                <!-- collapse2  -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse"  href="#collapse2">
+                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">5</large>   Duplicates in different type are found
+                        <i class="fa fa-chevron-down"></i> 
+                    </a>
+                  </h4>
+                </div><!-- /collapse2 header-->
+
+
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <ul>
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                Cv1.pdf 
+                                </div>
+                                <div class="col-sm-4">
+                                <i class="fa fa-eye-slash fa-lg" href="#" style="margin-left:10px;"></i>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                                <small><div class="col-sm-5">95% confidence score</div></small>
+                            </div>
+                       </li>  
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                Cv1.txt 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                               <small><div class="col-sm-5">99% confidence score</div></small>
+                            </div>
+                       </li>    
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                Cv1.doc 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <i class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></i> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                                <small><div class="col-sm-5">94% confidence score</div></small>
+                            </div>
+                       </li>    
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                Cv1.docx 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                               <small><div class="col-sm-5">79% confidence score</div></small>
+                            </div>
+                       </li>    
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                Cv1.html 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                                <small><div class="col-sm-5">87% confidence score</div></small>
+                            </div>
+                       </li>    
+
                     </ul>
-                  </nav>
+                  </div><!-- panel-body -->
                 </div>
-              </div>
-            </div>
-          </nav>
-          <section class="hero" id="hero">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+            </div><!-- /collapse2-->
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse"  href="#collapse3">
+                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">4</large>   Duplicates in different version are found
+                       <i class="fa fa-chevron-down"></i>
+                    </a>
+                  </h4>
+                </div><!-- collpase3 header -->
+
+
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                   <ul >
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                cv_v1.pdf 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                               <small><div class="col-sm-5">86% confidence score</div></small>
+                            </div>
+
+                       </li>  
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                cv_v2.pdf 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                                <small><div class="col-sm-5">96% confidence score</div></small>
+                            </div>
+
+                       </li>    
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                 cv_v3.pdf 
+                                </div>
+                                <div class="col-sm-4">
+                                <i class="fa fa-eye-slash fa-lg" href="#" style="margin-left:10px;"></i>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                               <small><div class="col-sm-5">87% confidence score</div></small>
+                            </div>
+                       </li>    
+                        <li style="padding:10px;">
+                             <div class="row">
+                                <div class="col-sm-3">
+                                 cv_v4.pdf 
+                                </div>
+                                <div class="col-sm-4">
+                                <a class="fa fa-eye fa-lg" href="#" style="margin-left:10px;"></a>  
+                                <a class="fa fa-download fa-lg" href="#" style="margin-left:10px;"></a> 
+                                <a class="fa fa-share-square-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                <a class="fa fa-star-o fa-lg" href="#" style="margin-left:10px;" ></a>
+                                </div>
+                                <small><div class="col-sm-5">82% confidence score</div></small>
+                            </div>
+
+                       </li>    
+
+                      </ul>
+                  </div><!-- /panel-body -->
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center inner">
-                  <h1 class="animated fadeInDown">HALCYON<span>DAYS</span></h1>
-                  <p class="animated fadeInUp delay-05s">An exclusive HTML5/CSS3 freebie by Peter Finlan, for <em>Codrops</em></p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                  <a href="http://tympanus.net/codrops/?p=19439" class="learn-more-btn">Back to the article</a>
-                </div>
-              </div>
-            </div>
-          </section>
-        </header>
-        <section class="intro text-center section-padding" id="intro">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2 wp1">
-                <h1 class="arrow">A Creative Portfolio Template</h1>
-                <p>Sed a lorem quis neque interdum <a href="#">consequat ut sed sem</a>. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent id tempor ipsum. Fusce at massa ac nunc porta fringilla sed eget neque. Quisque quis pretium nulla. Fusce eget bibendum neque, vel volutpat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="features text-center section-padding" id="features">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">Love what you do, and you'll do it well</h1>
-                <div class="features-wrapper">
-                  <div class="col-md-4 wp2">
-                    <div class="icon">
-                      <i class="fa fa-laptop shadow"></i>
-                    </div>
-                    <h2>Digital Design</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p>
-                  </div>
-                  <div class="col-md-4 wp2 delay-05s">
-                    <div class="icon">
-                      <i class="fa fa-code shadow"></i>
-                    </div>
-                    <h2>Web Development</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p>
-                  </div>
-                  <div class="col-md-4 wp2 delay-1s">
-                    <div class="icon">
-                      <i class="fa fa-heart shadow"></i>
-                    </div>
-                    <h2>Creative Direction</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="text-center" id="responsive">
-          <div class="container-fluid nopadding responsive-services">
-            <div class="wrapper">
-              <div class="iphone">
-                <div class="wp3"></div>
-              </div>
-              <div class="fluid-white"></div>
-            </div>
-            <div class="container designs">
-              <div class="row">
-                <div class="col-md-5 col-md-offset-7">
-                  <div id="servicesSlider">
-                    <ul class="slides">
-                      <li>
-                        <h1 class="arrow">Responsive Design Specialists</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
-                        <p>
-                        Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
-                        <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
-                      </li>
-                      <li>
-                        <h1 class="arrow">Bootstrap Professionals</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
-                        <p>
-                        Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
-                        <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="swag text-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <h1>I got 99 Problems<span>but <em>design</em> 'aint one</span></h1>
-                <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="portfolio text-center section-padding" id="portfolio">
-          <div class="container">
-            <div class="row">
-              <div id="portfolioSlider">
-                <ul class="slides">
-                  <li>
-                    <div class="col-md-4 wp4">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-01.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Minds</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                    <div class="col-md-4 wp4 delay-05s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-02.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Hearts</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                    <div class="col-md-4 wp4 delay-1s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-03.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Ideas</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-4 wp4">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-01.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Minds</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                    <div class="col-md-4 wp4 delay-05s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-02.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Hearts</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                    <div class="col-md-4 wp4 delay-1s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/portfolio-03.jpg" alt="Portfolio Item">
-                          <div class="overlay">
-                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
-                            <a class="close-overlay hidden">x</a>
-                          </div>
-                        </div>
-                      </div>
-                      <h2>Creative Ideas</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="ignite-cta text-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <a href="#" class="ignite-btn">Ignite Your Passion</a>
-              </div>
-            </div>
-          </div>
+            </div><!-- /collpase3 -->
+
+        
         </div>
-        <section class="team text-center section-padding" id="team">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">We're a team that adore what we do</h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="team-wrapper">
-                <div id="teamSlider">
-                  <ul class="slides">
-                    <li>
-                      <div class="col-md-4 wp5">
-                        <img src="img/team-01.png" alt="Team Member">
-                        <h2>Jon Snow</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
+           
+           
+           
+           
+           
+       </div>
+        
+     
+     
+    </div>
+    
+    </div> <!-- /container -->
+
+    <!--   footer    -->
+         <footer class="search">   
+		
+				<div class="container" >
+					<div class="row" >
+
+						<div class="col-md-5">											
+							<a href="#">Civil Defense</a>										
+						</div>
+                        
+                        <div class="col-md-2">												
+                                <ul>                           
+                                    <li ><a href="#" style="color:#57819C;">SOLUTIONS</a></li>
+      
+                                </ul>  																		
+                         </div>
+
+                        <div class="col-md-2">
+                                <ul>
+                                  
+                                    <li ><a href="#" style="color:#57819C;">COMPANY</a></li>                         
+                                   
+                                </ul>  		
+                        </div>	
+
+                        <div class="col-md-2">
+                               <ul>
+                                  
+                                    <li ><a href="#" style="color:#57819C;">CONTACT</a></li>
+                                
+                                   
+                               </ul>  		
+                        </div>		
+                                          
+					</div><!-- /row -->
+                                      
+                    
+                    <div class="row" >
+
+						<div class="col-md-5" style="text-align:justify;">
+												
+							<div class="small-footer">The Civil Defense organisation requires a system to manage emergencies which arise. These emergencies can be combinations of such causes as war, hurricanes, floods, droughts etc. </div>			
+							
+                            <br/>
+                                <a href="#"class="fa fa-linkedin-square fa-2x"></a>
+                                <a href="#"class="fa fa-facebook-square fa-2x"></a>
+                                <a href="#"class="fa fa-twitter-square fa-2x"></a>
+                                <a href="#"class="fa fa-google-plus-square fa-2x"></a>
+                                <a href="#"class="fa fa-youtube-square fa-2x"></a>                           
+						</div>
+
+                        <div class="col-md-2">
+                                <ul>
+                                    <small>
+                                    <li><a href="#">SharePoint</a></li>
+                                    <li><a href="#">Taxonomy Editor</a></li>
+                                    <li><a href="#">API Server</a></li>
+                                    </small>
+                                </ul>    
+                        </div>	
+
+
+                        <div class="col-md-2">
+                               <ul><small>
+                                   
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    </small>
+                                </ul>    
+                        </div>		
+                                    
+                        
+                         <div class="col-md-3">
+                                 <ul><small>
+                                   
+                                    <li><strong><i class="fa fa-map-marker"></i> Auckland Head Office</strong></li>
+                                    <li><a href="#">152 Quay St, Level 10 
+                                            Auckland, New Zealand</a></li><br/>
+                              
+                                    </small>
+                                </ul>    
                         </div>
-                      </div>
-                      
-                      <div class="col-md-4 wp5 delay-05s">
-                        <img src="img/team-02.png" alt="Team Member">
-                        <h2>Cersei Lannister</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wp5 delay-1s">
-                        <img src="img/team-03.png" alt="Team Member">
-                        <h2>Jamie Lannister</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="col-md-4 wp5">
-                        <img src="img/team-01.png" alt="Team Member">
-                        <h2>Jon Snow</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wp5 delay-05s">
-                        <img src="img/team-02.png" alt="Team Member">
-                        <h2>Cersei Lannister</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wp5 delay-1s">
-                        <img src="img/team-03.png" alt="Team Member">
-                        <h2>Jamie Lannister</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="subscribe text-center">
-          <div class="container">
-            <h1><i class="fa fa-paper-plane"></i><span>Subscribe to stay in the loop</span></h1>
-            <form action="#">
-              <input type="text" name="" value="" placeholder="" required>
-              <input type="submit" name="" value="Send">
-            </form>
-          </div>
-        </section>
-        <section class="dark-bg text-center section-padding contact-wrap" id="contact">
-          <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">Drop us a line</h1>
-              </div>
-            </div>
-            <div class="row contact-details">
-              <div class="col-md-4">
-                <div class="light-box box-hover">
-                  <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
-                  <p>Level 6, 23 Pitt St, Sydney</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="light-box box-hover">
-                  <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
-                  <p>+61 9 211 3747</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="light-box box-hover">
-                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
-                  <p><a href="#">hey@halcyondays.com</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <ul class="social-buttons">
-                  <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <ul class="legals">
-                  <li><a href="#">Terms &amp; Conditions</a></li>
-                  <li><a href="#">Legals</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 credit">
-                <p>Designed &amp; Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a> exclusively for <a href="http://tympanus.net/codrops/"><em>Codrops</em></a></p>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/jquery.flexslider.js"></script>
-        <script src="js/modernizr.js"></script>
-      </body>
-    </html>
+                        
+					</div><!-- /row -->
+                                
+                                      
+				</div> <!--/container-->
+                
+			
+    
+                <div class="container" style="margin-top:100px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                       <small>  <a href="https://github.com/sOm2y" class="fa fa-github fa-lg"></a>  version 1.00 |  Powered By <a href="http://som2y.com"><em>sOm2y</em></a></small> 
+
+                        </div> 
+
+
+                            <div class="col-md-6" style="text-align:right;">    
+
+
+                                <small><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>  | Copyright &copy; <a href="#">2014 Civil Defense</a></small>
+
+
+                            </div>
+                    </div>
+                    </div>
+            </footer>
+      
+
+    <script src="dist/js/vendor/jquery.min.js"></script>
+    <script src="dist/js/flat-ui.min.js"></script>
+    <script src="docs/assets/js/application.js"></script>
+
+    <script>
+      videojs.options.flash.swf = "dist/js/vendors/video-js.swf"
+    </script>
+    <script>
+         $('#event').click(function(){
+              $('#region').removeClass();
+              $(this).addClass('active');
+              $('#accordion').show('slow');
+
+              return false;
+
+          });    
+        
+          $('#region').click(function(){
+              $('#event').removeClass();
+              $(this).addClass('active');
+              $('#accordion').hide('slow');
+
+              return false;
+
+          });
+
+      
+    </script>
+  </body>
+</html>
