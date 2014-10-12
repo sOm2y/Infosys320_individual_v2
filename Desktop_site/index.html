@@ -16,6 +16,23 @@
 
     <link rel="shortcut icon" href="img/favicon.ico">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOXI_1iXkvdbtomluQIuamQy_-COmpHqg&sensor=false">
+    </script>
+    <script>
+        function initialize()
+        {
+        var mapProp = {
+          center:new google.maps.LatLng(-36.858628, 174.773459),
+          zoom:3,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+        var map=new google.maps.Map(document.getElementById("googleMap")
+          ,mapProp);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -77,7 +94,7 @@
           <li class="active" id="event">
             <a href="#" >
               <span class="badge pull-right">2</span>
-              Event
+                In Progress
             </a>
           </li>
            <li id="region">
@@ -92,12 +109,7 @@
               Inventory
             </a>
           </li>
-           <li id="inprogress">
-            <a href="#" >
-              <span class="badge pull-right">4</span>
-              In Progress
-            </a>
-          </li>
+          
 
         </ul>
        </div>
@@ -109,7 +121,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         <a data-toggle="collapse"  href="#collapse1">
-                            <large style="color:#FA6D4D;padding-right:15px;font-size:160%;">3</large> Exact Duplicates are found
+                            <large style="color:#FA6D4D;padding-right:15px;font-size:160%;">3</large> High Level
                             <i class="fa fa-chevron-down"></i> 
                         </a>
                       </h4>
@@ -176,7 +188,7 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse"  href="#collapse2">
-                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">5</large>   Duplicates in different type are found
+                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">5</large>   Median Level
                         <i class="fa fa-chevron-down"></i> 
                     </a>
                   </h4>
@@ -267,7 +279,7 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse"  href="#collapse3">
-                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">4</large>   Duplicates in different version are found
+                        <large style="color:#FA6D4D; padding-right:15px;font-size:160%;">4</large>  Low Level
                        <i class="fa fa-chevron-down"></i>
                     </a>
                   </h4>
@@ -346,11 +358,14 @@
         </div>
            
            
+          <div id="googleMap" style="width:1200px;height:700px;"></div>
+
+           <div id="graph"><iframe src="http://embed.vida.io/documents/tx699Skm3Qk6PLwnE" width="1000" height="725" seamless frameBorder="0" scrolling="no"></iframe></div>
            
            
            
-       </div>
-        
+           
+       </div>   <!-- /col-md-10    -->
      
      
     </div>
@@ -476,25 +491,47 @@
       videojs.options.flash.swf = "dist/js/vendors/video-js.swf"
     </script>
     <script>
-         $('#event').click(function(){
-              $('#region').removeClass();
-              $(this).addClass('active');
-              $('#accordion').show('slow');
+        $(document).ready(function(){
+            
+             $('#googleMap').hide();
+             $('#graph').hide();
+             $('#event').click(function(){
+                  $('#resource').removeClass();
+                  $('#region').removeClass();
+                  $(this).addClass('active');
+                  $('#accordion').show('slow');
+                  $('#googleMap').hide();
+                  $('#graph').hide();
+                  return false;
 
-              return false;
+              });    
 
-          });    
-        
-          $('#region').click(function(){
-              $('#event').removeClass();
-              $(this).addClass('active');
-              $('#accordion').hide('slow');
+              $('#region').click(function(){
+                  $('#event').removeClass();
+                  $('#resource').removeClass();
+                  $(this).addClass('active');
+                  $('#accordion').hide('slow');
+                  $('#googleMap').show();
+                  $('#graph').hide();
+                  return false;
 
-              return false;
+              });
+               $('#resource').click(function(){
+                  $('#event').removeClass();
+                  $('#region').removeClass();
+                  $(this).addClass('active');
+                  $('#accordion').hide('slow');
+                  $('#googleMap').hide();
+                  $('#graph').show();
+                  return false;
 
-          });
+              });
 
-      
+            
+            
+        });
+         
+          
     </script>
   </body>
 </html>
