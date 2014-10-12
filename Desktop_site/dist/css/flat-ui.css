@@ -5785,7 +5785,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
     }
   }
 footer {
-  padding: 0;
+  padding: 20px;
   font-size: 15px;
   color: #bac1c8;
   background-color: #edeff1;
@@ -5793,6 +5793,7 @@ footer {
 footer a {
   font-weight: 700;
   color: #9aa4af;
+      
   }
 footer p {
   margin-bottom: 10px;

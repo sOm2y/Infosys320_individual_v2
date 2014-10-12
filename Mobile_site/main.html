@@ -1,0 +1,638 @@
+<html ng-app="order">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+     
+    <title>Coffee Time</title>
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <script src="//code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.js"></script>
+   
+    <style>
+      body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+      
+      
+    </style>
+    
+    
+    <script
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOXI_1iXkvdbtomluQIuamQy_-COmpHqg&sensor=true">
+    </script>
+
+
+  </head>
+ 
+  <body>
+
+<!--
+    <ion-side-menus>
+    
+      <ion-side-menu-content>
+        <ion-header-bar class="bar-positive">
+          <button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+          <h1 class="title">Coffee Time</h1>
+
+        </ion-header-bar>
+
+          <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-light" ng-controller="BeverageCtrl">
+
+              <ion-tab title="Beverage" icon-on="ion-coffee" ng-controller="BeverageCtrl" >
+                  <ion-content>
+                    <div class="list">
+
+                        <a ng-repeat="item in items" 
+                           href="#/{{item.id}}"
+                           class="item item-thumbnail-left">
+
+                          <img ng-src="{{ item.image }}">
+                          <h2>{{ item.name }}</h2>
+                          <h4>{{ item.price | currency}}</h4>
+                        </a>
+
+                      </div>
+
+                   </ion-content>
+              </ion-tab>
+
+              <ion-tab title="Food" icon-on="ion-pizza" ng-controller="FoodCtrl">  
+              <ion-content>
+                    <div class="list">
+
+                        <a ng-repeat="item in items" 
+                           href="#/{{item.id}}"
+                           class="item item-thumbnail-left">
+
+                          <img ng-src="{{ item.image }}">
+                          <h2>{{ item.name }}</h2>
+                          <h4>{{ item.price | currency }}</h4>
+                        </a>
+
+                      </div>
+
+                   </ion-content>
+              </ion-tab>
+
+              <ion-tab title="Cart" icon-on="ion-ios7-cart" ng-controller="CartCtrl">
+              <ion-content>
+                   <ion-list  can-swipe="listCanSwipe">
+                      <ion-item ng-repeat="item in items">
+
+
+                        <a href="#/{{item.id}}"class="item item-thumbnail-left">
+
+                          <img ng-src="{{ item.image }}">
+                          <h2>{{ item.album }}</h2>
+                          <h4>{{ item.artist }}</h4>
+                           <ion-option-button class="button-positive">Share</ion-option-button>
+    <ion-option-button class="button-assertive">Edit</ion-option-button>
+                        </a>
+                        <ion-option-button class="button-positive"
+                    >
+                          Share
+                        </ion-option-button>
+                        <ion-option-button class="button-info">
+                          Edit
+                        </ion-option-button>
+
+                     </ion-item>
+                    </ion-list>
+
+                   </ion-content>
+               
+               
+              </ion-tab>
+
+            </ion-tabs>
+       
+         
+        <ion-content class="">
+         
+                 
+       
+       <div id="googleMap" style="width:320;height:550px;"></div>
+        </ion-content>
+      </ion-side-menu-content>
+    
+      <ion-side-menu expose-aside-when="large" >
+        <ion-header-bar class="bar-royal">
+          <h1 class="title">Setting</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <div class="item active">
+              <a class="icon ion-ios7-paperplane"> Order</a>
+            </div>
+             <div class="item">
+              <a class="icon ion-ios7-person"> Account</a>
+            </div>
+            <div class="item">
+              <a class="icon ion-ios7-gear"> Setting</a>
+            </div>
+            <div class="item">
+              <a class="icon ion-ios7-location"> Location</a>
+            </div>
+            <div class="item">
+              <a class="icon ion-log-out"> Log out</a>
+            </div>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+      
+    </ion-side-menus>
+    
+    
+-->
+        
+ 
+    
+    
+     <div ng-controller="MainCtrl">       
+            <ion-nav-view></ion-nav-view>
+          </div>
+
+          <script id="event-menu.html" type="text/ng-template">
+            <ion-side-menus>
+
+              <ion-side-menu-content>
+                <ion-nav-bar class="bar-positive">
+            
+                </ion-nav-bar>
+                <ion-nav-buttons side="left">
+                  <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+                  </button>
+                </ion-nav-buttons>
+                 <ion-nav-buttons side="right">
+                  <button class="button button-icon button-clear ion-ios7-search">
+                  </button>
+                </ion-nav-buttons>
+                
+                <ion-nav-view name="menuContent"></ion-nav-view>
+                
+              </ion-side-menu-content> 
+
+              <ion-side-menu side="left">
+                <ion-header-bar class="bar-assertive">
+                  <h1 class="title">Dashboard</h1>
+                </ion-header-bar>
+                <ion-content>
+                  <ul class="list">
+                    
+                    <a ui-sref="eventmenu.home"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-paperplane"></i> Menu
+                    </a>
+
+
+
+                    <a ui-sref="eventmenu.account"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-person"></i>Account
+                    </a>
+                    <a ui-sref="eventmenu.favourite"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-star"></i>
+                      Favourite
+                    </a>
+                    <a ui-sref="eventmenu.favourite"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-star"></i>
+                      My Order
+                    </a>
+                    <a ui-sref="eventmenu.location"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-location"></i>
+                      Locations
+                    </a>
+                     <a ui-sref="eventmenu.location"
+                       ui-sref-active="current" 
+                       class="item item-icon-left">
+                       <i class="icon ion-log-out"></i>
+                      Log out
+                    </a>
+                  </ul>
+                </ion-content>
+              </ion-side-menu>
+
+            </ion-side-menus>
+          </script>
+
+          <script id="home.html" type="text/ng-template">
+          
+            <ion-view title="Order Menu">
+              <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-light" ng-controller="ModalCtrl">
+
+              <ion-tab title="Beverage" icon-on="ion-coffee" ng-controller="BeverageCtrl" >
+                 <ion-content>
+
+                      <ion-list>
+                        <div ng-repeat="group in groups">
+                          <ion-item class="item-stable"
+                                    ng-click="toggleGroup(group)"
+                                    ng-class="{active: isGroupShown(group)}">
+                              <i class="icon" ng-class="isGroupShown(group) ? 'ion-ios7-arrow-down' : 'ion-ios7-arrow-right'"></i>
+                            &nbsp;
+                             {{group.name}}
+                             
+                          </ion-item>
+                          <ion-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)" ng-click="modal.show()">
+                            <a href="#/{{item.id}}"
+                           class="item item-thumbnail-left">
+
+                          <img ng-src="{{ item.image }}">
+                          <h2>{{ item.name }}</h2>
+                          <h4>{{ item.price | currency }}</h4>
+                        </a>
+                          </ion-item>
+                        </div>
+                      </ion-list>
+
+                    </ion-content>
+              </ion-tab>
+
+              <ion-tab title="Food" icon-on="ion-pizza" ng-controller="FoodCtrl">  
+              <ion-content>
+                    <div class="list">
+
+                        <a ng-repeat="item in items" 
+                           href="#/{{item.id}}"
+                           class="item item-thumbnail-left" ng-click="modal.show()">
+
+                          <img ng-src="{{ item.image }}">
+                          <h2>{{ item.name }}</h2>
+                          <h4>{{ item.price | currency }}</h4>
+                        </a>
+
+                      </div>
+
+                   </ion-content>
+              </ion-tab>
+
+              <ion-tab title="Cart" icon-on="ion-ios7-cart" ng-controller="ModalCtrl">
+              
+                   
+                 
+                    <ion-content ng-controller="testCtrl">
+
+
+                      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+                        <ion-item ng-repeat="item in items" 
+                                  item="item"
+                                  href="#/item/{{item.id}}">
+                           {{ item.name|limitTo:10}}...{{" x "+item.quantity +" - "}}{{item.quantity*item.price|currency}}
+                     
+                          <ion-option-button class="button-assertive"
+                                             ng-click="onItemDelete(item)">
+                            DELETE
+                          </ion-option-button>
+                          <ion-option-button class="button-calm"
+                                             ng-click="modal.show()">
+                            EDIT
+                          </ion-option-button>
+                          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+                        </ion-item>
+
+                      </ion-list>
+
+                    </ion-content>
+
+                   
+                   
+                   
+               
+               <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.checkout">CHECK OUT</div>
+                </div>
+              </ion-tab>
+
+            </ion-tabs>
+       
+            </ion-view>
+          </script>
+            
+         <script id="modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title"></h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Quantity</span>
+              <input ng-model="add.quantity" type="text">
+            </label>
+          
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Size
+                </div>
+                <select ng-model="add.size">
+                  <option>small</option>
+                  <option selected>median</option>
+                  <option>large</option>
+                </select>
+              </label>
+               <ul class="list">
+               
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                     Sugar
+                  </li>
+
+                   <li class="item item-checkbox">
+                    Choc
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                    
+                  </li>
+
+                   <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                     Cookie
+                  </li>
+
+                  
+
+                </ul>
+              
+            <button class="button button-full button-positive" ng-click="createContact(add)">ADD</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+           
+           <script id="checkout.html" type="text/ng-template">
+               
+                <ion-header-bar class="bar bar-header bar-positive" ng-contoller="ModalCtrl">
+                  <h1 class="title">CHECK OUT</h1>
+                  <a class="button button-clear button-primary" ui-sref="eventmenu.home">Cancel</a>
+                </ion-header-bar>
+                      <ion-content>
+                       <div class="list">
+
+                       
+                        <a ng-repeat="item in adds" 
+                           href="#/{{item.name}}"
+                           class="item item-thumbnail-left">
+
+                         <img ng-src="{{ item.image }}">
+                          <h2>Name: {{ item.name }}</h2>
+                          <h4>Price: {{ item.price | currency }}</h4>
+                           <h4>Quantity: {{ item.quantity}}</h4>
+                           <h4>Size: {{ item.size}}</h4>
+                        </a>
+                       <button class="button button-block button-energized">
+                         Estimate Time: 30 mins
+                        </button>
+                      </div>
+                       
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.payment">Confirm</div>
+                </div>
+                
+                </script>
+                <script id="payment.html" type="text/ng-template">
+               
+               <ion-header-bar class="bar bar-header bar-positive"  ng-contoller="ModalCtrl">
+                  <h1 class="title">Payment</h1>
+                  <a class="button button-clear button-primary"  ui-sref="eventmenu.checkout">Back</a>
+                </ion-header-bar>
+                      <ion-content>
+                     <div class="list">
+
+                      <label class="item item-input item-select">
+                        <div class="input-label">
+                          Payment
+                        </div>
+                        <select>
+                          <option>VISA</option>
+                          <option selected>INTERNET BANK</option>
+                          <option>APPLE PAY</option>
+                        </select>
+                      </label>
+    
+                    </div>
+                   
+                    </ion-content>
+                   <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.success">PAY NOW</div>
+                        </div>
+                 
+                </script>
+                
+                
+                    <script id="success.html" type="text/ng-template">
+               <ion-view title="SUCCESS" ng-contoller="ModalCtrl">
+                      <ion-content>
+                      <div class="row"> 
+                        
+                         <div class="col" ><img style="width:300px"  src="/img/qrcode.png"/></div>
+                  </div>
+                        <p>Payment Successful</p>
+                        <p>You purchased item will be avalible at 8:00 P.M.</p>
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.home">BACK TO HOME</div>
+                        </div>
+                 
+                  </ion-view>
+                </script>
+                
+                
+                
+                
+                
+            
+          <script id="account.html" type="text/ng-template">
+            <ion-view title="Account Setting">
+              <ion-content>
+                <div class="list">
+
+                      <a class="item item-icon-left" href="#">
+                        <i class="icon ion-ios7-telephone"></i>
+                        Mobile Phone
+                        <span class="item-note">
+                          +64 021 434 324
+                        </span>
+                      </a>
+
+                      <a class="item item-icon-left href="#">
+                        <i class="icon ion-ios7-location"></i>
+                        Address
+                       
+                      </a>
+
+                      <a class="item item-icon-left" ui-sref="eventmenu.customized">
+                        <i class="icon ion-ios7-gear"></i>
+                        Customized
+                       
+                      </a>
+
+                      <a class="item item-icon-left" href="#">
+                        <i class="icon ion-person-stalker"></i>
+                        Points
+                         <span class="item-note">
+                          250PTS
+                        </span>
+                      </a>
+
+                    </div>
+                    </ion-content>
+                  </ion-view>
+                </script>
+                <script id="customized.html" type="text/ng-template">
+          
+                  <ion-view title="customized">
+            
+                    <ion-content>
+
+                      <ul class="list">
+
+                          <li class="item item-toggle" >
+                             Notification
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             Sounds
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             Privacy
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             email
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+
+                          
+
+                        </ul>
+
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.account">Back</div>
+                        </div>
+                  </ion-view>
+                </script>
+
+              <script id="favourite.html" type="text/ng-template">
+                <ion-view title="Favourite List" left-buttons="leftButtons">
+                  <ion-content>
+                   <div class="list">
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                          <span class="item-note">
+                          Price $2.5
+                        </span>
+                        </a>
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                          <span class="item-note">
+                         Price $2.5
+                        </span>
+                        </a>
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                          <span class="item-note">
+                          Price $2.5
+                        </span>
+                        </a>
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                         <span class="item-note">
+                          Price $2.5
+                        </span>
+                        </a>
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                          <span class="item-note">
+                         Price $2.5
+                        </span>
+                        </a>
+
+                        <a class="item item-avatar" href="#">
+                          <img src="/img/beverage3.jpg">
+                          <h3>Venkman</h3>
+                          <span class="item-note">
+                          Price $2.5
+                        </span>
+                        </a>
+
+
+
+                    </div>
+                  </ion-content>
+                </ion-view>
+              </script>
+              <script id="location.html" type="text/ng-template">
+               
+                <ion-view title="Store Location">
+                  <ion-content>
+                      <div id="map" style="width:320px;height:525px;" ></div>
+                    </ion-content>
+                    <ion-footer-bar class="bar-positive">
+                      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+                    </ion-footer-bar>
+                    </ion-view>
+              </script>
+    
+    
+    
+    
+    
+    <script src="http://use.edgefonts.net/quicksand:i4,n3,i7,n7,n4,i3:all.js"></script>
+   
+<!--    <script src="/lib/ionic/js/ionic.bundle.js"></script>-->
+    
+    <script src="js/order.js"></script>
+    
+    
+    
+  </body>
+</html>

@@ -17,22 +17,7 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOXI_1iXkvdbtomluQIuamQy_-COmpHqg&sensor=false">
-    </script>
-    <script>
-        function initialize()
-        {
-        var mapProp = {
-          center:new google.maps.LatLng(-36.858628, 174.773459),
-          zoom:3,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
-        var map=new google.maps.Map(document.getElementById("googleMap")
-          ,mapProp);
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+   
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -41,6 +26,14 @@
     <![endif]-->
   </head>
   <body>
+     <style>
+     li{
+          list-style-type: none;
+          
+          
+      }
+      
+      </style>
      <!-- Navigation  -->
     <div class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -360,7 +353,7 @@
            
           <div id="googleMap" style="width:1200px;height:700px;"></div>
 
-           <div id="graph"><iframe src="http://embed.vida.io/documents/tx699Skm3Qk6PLwnE" width="1000" height="725" seamless frameBorder="0" scrolling="no"></iframe></div>
+           <iframe id="graph" src="http://embed.vida.io/documents/tx699Skm3Qk6PLwnE" width="1000" height="725" seamless frameBorder="0" scrolling="no"></iframe>
            
            
            
@@ -392,7 +385,7 @@
                         <div class="col-md-2">
                                 <ul>
                                   
-                                    <li ><a href="#" style="color:#57819C;">COMPANY</a></li>                         
+                                    <li ><a href="#" style="color:#57819C;">Organization</a></li>                         
                                    
                                 </ul>  		
                         </div>	
@@ -426,9 +419,9 @@
                         <div class="col-md-2">
                                 <ul>
                                     <small>
-                                    <li><a href="#">SharePoint</a></li>
-                                    <li><a href="#">Taxonomy Editor</a></li>
-                                    <li><a href="#">API Server</a></li>
+                                    <li><a href="#">Event</a></li>
+                                    <li><a href="#">Inventory</a></li>
+                                    <li><a href="#">In Progress</a></li>
                                     </small>
                                 </ul>    
                         </div>	
@@ -449,7 +442,7 @@
                                  <ul><small>
                                    
                                     <li><strong><i class="fa fa-map-marker"></i> Auckland Head Office</strong></li>
-                                    <li><a href="#">152 Quay St, Level 10 
+                                    <li><a href="#">888 Quay St, Level 10 
                                             Auckland, New Zealand</a></li><br/>
                               
                                     </small>
@@ -466,7 +459,7 @@
                 <div class="container" style="margin-top:100px;">
                     <div class="row">
                         <div class="col-md-6">
-                       <small>  <a href="https://github.com/sOm2y" class="fa fa-github fa-lg"></a>  version 1.00 |  Powered By <a href="http://som2y.com"><em>sOm2y</em></a></small> 
+                       <small>  <a href="https://github.com/sOm2y" class="fa fa-github fa-lg"></a>  version 1.00 |  Powered By <a href="http://som2y.com"><em>yyin888</em></a></small> 
 
                         </div> 
 
@@ -486,15 +479,13 @@
     <script src="dist/js/vendor/jquery.min.js"></script>
     <script src="dist/js/flat-ui.min.js"></script>
     <script src="docs/assets/js/application.js"></script>
-
-    <script>
-      videojs.options.flash.swf = "dist/js/vendors/video-js.swf"
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOXI_1iXkvdbtomluQIuamQy_-COmpHqg&sensor=false">
     </script>
+   
     <script>
         $(document).ready(function(){
             
-             $('#googleMap').hide();
-             $('#graph').hide();
+            
              $('#event').click(function(){
                   $('#resource').removeClass();
                   $('#region').removeClass();
@@ -510,8 +501,9 @@
                   $('#event').removeClass();
                   $('#resource').removeClass();
                   $(this).addClass('active');
-                  $('#accordion').hide('slow');
+                 
                   $('#googleMap').show();
+                  $('#accordion').hide('slow');
                   $('#graph').hide();
                   return false;
 
@@ -520,18 +512,38 @@
                   $('#event').removeClass();
                   $('#region').removeClass();
                   $(this).addClass('active');
+                  $('#graph').show();
                   $('#accordion').hide('slow');
                   $('#googleMap').hide();
-                  $('#graph').show();
+                 
                   return false;
 
               });
-
+            
+             $('#googleMap').hide();
+             $('#graph').hide();
             
             
         });
          
           
+    </script>
+     <script>
+        function initialize()
+        {
+        var mapProp = {
+          center:new google.maps.LatLng(-36.858628, 174.773459),
+          zoom:12,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+        var map=new google.maps.Map(document.getElementById("googleMap")
+          ,mapProp);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+      videojs.options.flash.swf = "dist/js/vendors/video-js.swf"
     </script>
   </body>
 </html>
