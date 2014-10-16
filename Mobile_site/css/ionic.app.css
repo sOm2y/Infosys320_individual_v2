@@ -2548,7 +2548,7 @@ cite {
   text-align: center; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #fff;
+  color: black;
   font-weight: 500;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.2; }
@@ -2808,9 +2808,9 @@ a.subdued {
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
-    border-color: #EE6B56;
-    background-color: #93CCCC;
-    background-image: linear-gradient(0deg, #EE6B56, #EE6B56 50%, transparent 50%);
+    border-color: #0C3364;
+    background-color: #0C3364;
+    background-image: linear-gradient(0deg, #0C3364, #0C3364 50%, transparent 50%);
     color: #fff; }
     .bar.bar-positive .title {
       color: #fff; }
@@ -2826,8 +2826,8 @@ a.subdued {
     .bar.bar-calm.bar-footer {
       background-image: linear-gradient(180deg, #1aacc3, #1aacc3 50%, transparent 50%); }
   .bar.bar-assertive {
-    border-color: #cc2311;
-    background-color: #EE6B56;
+    border-color: #0C3364;
+    background-color: #0C3364;
     background-image: linear-gradient(0deg, #cc2311, #cc2311 50%, transparent 50%);
     color: #fff; }
     .bar.bar-assertive .title {
@@ -4156,9 +4156,9 @@ a.subdued {
  */
 .item {
     
-  border-color: #333;
-  background-color: #192830;
-  color: #fff;
+  border-color: #eee;
+  background-color: #fff;
+  color: black;
   position: relative;
   z-index: 2;
   display: block;
@@ -4280,7 +4280,7 @@ a.subdued {
 a.item {
   color: inherit;
   text-decoration: none; 
-    background: #b5956e;
+    background: #6195C9;
 }
   a.item:hover, a.item:focus {
     text-decoration: none; }
@@ -4598,7 +4598,7 @@ a.item-content {
 
 .item-note {
   float: right;
-  color: #fff;
+  color: #333;
   font-size: 14px; }
 
 .item-left-editable .item-content, .item-right-editable .item-content {

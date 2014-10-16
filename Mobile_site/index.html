@@ -1,55 +1,586 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="order">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-<!--    <link href="css/style.css" rel="stylesheet">-->
+     
+    <title>Water Pollution Monitoring System</title>
+    <link href="css/ionic.app.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<!--     IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
-<!--    <link href="css/ionic.app.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="css/style.css">
-    
-
-    <!-- ionic/angularjs js -->
-   <script src="//code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-  </head>
-  <body ng-app="starter" animation="" ng-controller="MyCtrl">
+    <script src="//code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.js"></script>
    
-    <ion-slide-box>
-    <ion-slide>
-      <div class="box blue">
-        <h1>Welcome to</h1><h1> Just-In-Time</h1>
-        <p>We provide the best quality and services<p>
-        
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="box red">
-       <h1>Esay order, Esay go</h1>
-       <p><i class="fa fa-coffee fa-4x"></i></p>
-      </div>
-      </ion-slide>
+    <style>
+      body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
       
-      <ion-slide>
-      <div class="box orange">
-       <h1>start you order</h1>
-       <div class="order"><a href="main.html">ORDER</a></div>
-      </div>
-    </ion-slide>
-  </ion-slide-box>
-  
-<script src="http://use.edgefonts.net/quicksand:i4,n3,i7,n7,n4,i3:all.js"></script>
+      
+    </style>
+    
+    
+    <script
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOXI_1iXkvdbtomluQIuamQy_-COmpHqg&sensor=true">
+    </script>
+
+
+  </head>
+ 
+  <body>
+
+
+ 
+    
+    
+     <div ng-controller="MainCtrl">       
+            <ion-nav-view></ion-nav-view>
+          </div>
+
+          <script id="event-menu.html" type="text/ng-template">
+            <ion-side-menus>
+
+              <ion-side-menu-content>
+                <ion-nav-bar class="bar-positive">
+            
+                </ion-nav-bar>
+                <ion-nav-buttons side="left">
+                  <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+                  </button>
+                </ion-nav-buttons>
+                 <ion-nav-buttons side="right">
+                  <button class="button button-icon button-clear ion-ios7-search">
+                  </button>
+                </ion-nav-buttons>
+                
+                <ion-nav-view name="menuContent"></ion-nav-view>
+                
+              </ion-side-menu-content> 
+
+              <ion-side-menu side="left">
+                <ion-header-bar class="bar-assertive">
+                  <h1 class="title">Dashboard</h1>
+                </ion-header-bar>
+                <ion-content>
+                  <ul class="list">
+                    
+                    <a ui-sref="eventmenu.home"
+                       ui-sref-active="current" 
+					   ng-click="toggleLeft()"
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-paperplane"></i> Analysis Report
+                    </a>
+
+
+
+                 
+                    <a ui-sref="eventmenu.favourite"
+                       ui-sref-active="current" 
+					   ng-click="toggleLeft()"
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-star"></i>
+                      InProgress
+                    </a>
+               
+                    <a ui-sref="eventmenu.location"
+                       ui-sref-active="current" 
+					   ng-click="toggleLeft()"
+                       class="item item-icon-left">
+                      <i class="icon ion-ios7-location"></i>
+                      Locations
+                    </a>
+                     <a ui-sref="eventmenu.location"
+                       ui-sref-active="current" 
+					   ng-click="toggleLeft()"
+                       class="item item-icon-left">
+                       <i class="icon ion-log-out"></i>
+                      Log out
+                    </a>
+                  </ul>
+                </ion-content>
+              </ion-side-menu>
+
+            </ion-side-menus>
+          </script>
+
+          <script id="home.html" type="text/ng-template">
+          
+            <ion-view title="Water Sample Report">
+              
+				<ion-content>
+				<div class="list card">
+
+				  <div class="item item-avatar">
+					<img src="img/author.jpg">
+					<h2>Marty McFly</h2>
+					<p>November 05, 1955</p>
+				  </div>
+
+				  <div class="item item-body">
+					<img class="full-image" src="img/water.jpg">
+					<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere ac mi at
+					 elementum. Duis tincidunt ullamcorper risus sed venenatis. Class aptent taciti sociosqu ad 
+					 litora torquent per conubia nostra, per inceptos him
+					 ena ...
+					 
+					</p>
+					<p>
+					  <a href="#" class="subdued">1 Like</a>
+					  <a href="#" class="subdued">5 Comments</a>
+					</p>
+				  </div>
+
+				  <div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href="#">
+					  <i class="icon ion-thumbsup"></i>
+					  Like
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-chatbox"></i>
+					  Comment
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-share"></i>
+					  Share
+					</a>
+				  </div>
+
+				</div>
+				<div class="list card">
+
+				  <div class="item item-avatar">
+					<img src="img/author.jpg">
+					<h2>Marty McFly</h2>
+					<p> November 05, 1955</p>
+				  </div>
+
+				  <div class="item item-body">
+					<img class="full-image" src="img/water.jpg">
+					<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere ac mi at
+					 elementum. Duis tincidunt ullamcorper risus sed venenatis. Class aptent taciti sociosqu ad 
+					 litora torquent per conubia nostra, per inceptos him
+					 ena ...
+					</p>
+					<p>
+					  <a href="#" class="subdued">1 Like</a>
+					  <a href="#" class="subdued">5 Comments</a>
+					</p>
+				  </div>
+
+				  <div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href="#">
+					  <i class="icon ion-thumbsup"></i>
+					  Like
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-chatbox"></i>
+					  Comment
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-share"></i>
+					  Share
+					</a>
+				  </div>
+
+				</div>
+				<div class="list card">
+
+				  <div class="item item-avatar">
+					<img src="img/author.jpg">
+					<h2>Marty McFly</h2>
+					<p>November 05, 1955</p>
+				  </div>
+
+				  <div class="item item-body">
+					<img class="full-image" src="img/water.jpg">
+					<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere ac mi at
+					 elementum. Duis tincidunt ullamcorper risus sed venenatis. Class aptent taciti sociosqu ad 
+					 litora torquent per conubia nostra, per inceptos him
+					 ena ...
+					</p>
+					<p>
+					  <a href="#" class="subdued">1 Like</a>
+					  <a href="#" class="subdued">5 Comments</a>
+					</p>
+				  </div>
+
+				  <div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href="#">
+					  <i class="icon ion-thumbsup"></i>
+					  Like
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-chatbox"></i>
+					  Comment
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-share"></i>
+					  Share
+					</a>
+				  </div>
+
+				</div>
+				<div class="list card">
+
+				  <div class="item item-avatar">
+					<img src="img/author.jpg">
+					<h2>Marty McFly</h2>
+					<p>November 05, 1955</p>
+				  </div>
+
+				  <div class="item item-body">
+					<img class="full-image" src="img/water.jpg">
+					<p>
+					  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere ac mi at
+					 elementum. Duis tincidunt ullamcorper risus sed venenatis. Class aptent taciti sociosqu ad 
+					 litora torquent per conubia nostra, per inceptos him
+					 ena ...
+					</p>
+					<p>
+					  <a href="#" class="subdued">1 Like</a>
+					  <a href="#" class="subdued">5 Comments</a>
+					</p>
+				  </div>
+
+				  <div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href="#">
+					  <i class="icon ion-thumbsup"></i>
+					  Like
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-chatbox"></i>
+					  Comment
+					</a>
+					<a class="tab-item" href="#">
+					  <i class="icon ion-share"></i>
+					  Share
+					</a>
+				  </div>
+
+				</div>
+				
+				</ion-content>
+             
+       
+            </ion-view>
+          </script>
+            
+         <script id="modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title"></h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Quantity</span>
+              <input ng-model="add.quantity" type="text">
+            </label>
+          
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Size
+                </div>
+                <select ng-model="add.size">
+                  <option>small</option>
+                  <option selected>median</option>
+                  <option>large</option>
+                </select>
+              </label>
+               <ul class="list">
+               
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                     Sugar
+                  </li>
+
+                   <li class="item item-checkbox">
+                    Choc
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                    
+                  </li>
+
+                   <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" >
+                     </label>
+                     Cookie
+                  </li>
+
+                  
+
+                </ul>
+              
+            <button class="button button-full button-positive" ng-click="createContact(add)">ADD</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+           
+           <script id="checkout.html" type="text/ng-template">
+               
+                <ion-header-bar class="bar bar-header bar-positive" ng-contoller="ModalCtrl">
+                  <h1 class="title">CHECK OUT</h1>
+                  <a class="button button-clear button-primary" ui-sref="eventmenu.home">Cancel</a>
+                </ion-header-bar>
+                      <ion-content>
+                       <div class="list">
+
+                       
+                        <a ng-repeat="item in adds" 
+                           href="#/{{item.name}}"
+                           class="item item-thumbnail-left">
+
+                         <img ng-src="{{ item.image }}">
+                          <h2>Name: {{ item.name }}</h2>
+                          <h4>Price: {{ item.price | currency }}</h4>
+                           <h4>Quantity: {{ item.quantity}}</h4>
+                           <h4>Size: {{ item.size}}</h4>
+                        </a>
+                       <button class="button button-block button-energized">
+                         Estimate Time: 30 mins
+                        </button>
+                      </div>
+                       
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.payment">Confirm</div>
+                </div>
+                
+                </script>
+                <script id="payment.html" type="text/ng-template">
+               
+               <ion-header-bar class="bar bar-header bar-positive"  ng-contoller="ModalCtrl">
+                  <h1 class="title">Payment</h1>
+                  <a class="button button-clear button-primary"  ui-sref="eventmenu.checkout">Back</a>
+                </ion-header-bar>
+                      <ion-content>
+                     <div class="list">
+
+                      <label class="item item-input item-select">
+                        <div class="input-label">
+                          Payment
+                        </div>
+                        <select>
+                          <option>VISA</option>
+                          <option selected>INTERNET BANK</option>
+                          <option>APPLE PAY</option>
+                        </select>
+                      </label>
+    
+                    </div>
+                   
+                    </ion-content>
+                   <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.success">PAY NOW</div>
+                        </div>
+                 
+                </script>
+                
+                
+                    <script id="success.html" type="text/ng-template">
+               <ion-view title="SUCCESS" ng-contoller="ModalCtrl">
+                      <ion-content>
+                      <div class="row"> 
+                        
+                         <div class="col" ><img style="width:300px"  src="/img/qrcode.png"/></div>
+                  </div>
+                        <p>Payment Successful</p>
+                        <p>You purchased item will be avalible at 8:00 P.M.</p>
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.home">BACK TO HOME</div>
+                        </div>
+                 
+                  </ion-view>
+                </script>
+                
+                
+                
+                
+                
+            
+          <script id="account.html" type="text/ng-template">
+            <ion-view title="Account Setting">
+              <ion-content>
+                <div class="list">
+
+                      <a class="item item-icon-left" href="#">
+                        <i class="icon ion-ios7-telephone"></i>
+                        Mobile Phone
+                        <span class="item-note">
+                          +64 021 434 324
+                        </span>
+                      </a>
+
+                      <a class="item item-icon-left href="#">
+                        <i class="icon ion-ios7-location"></i>
+                        Address
+                       
+                      </a>
+
+                      <a class="item item-icon-left" ui-sref="eventmenu.customized">
+                        <i class="icon ion-ios7-gear"></i>
+                        Customized
+                       
+                      </a>
+
+                      <a class="item item-icon-left" href="#">
+                        <i class="icon ion-person-stalker"></i>
+                        Points
+                         <span class="item-note">
+                          250PTS
+                        </span>
+                      </a>
+
+                    </div>
+                    </ion-content>
+                  </ion-view>
+                </script>
+                <script id="customized.html" type="text/ng-template">
+          
+                  <ion-view title="customized">
+            
+                    <ion-content>
+
+                      <ul class="list">
+
+                          <li class="item item-toggle" >
+                             Notification
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             Sounds
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             Privacy
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+                            <li class="item item-toggle">
+                             email
+                             <label class="toggle toggle-assertive">
+                               <input type="checkbox">
+                               <div class="track">
+                                 <div class="handle"></div>
+                               </div>
+                             </label>
+                          </li>
+
+                          
+
+                        </ul>
+
+                    </ion-content>
+                    <div class="bar bar-footer bar-balanced">
+                          <div class="title" ui-sref="eventmenu.account">Back</div>
+                        </div>
+                  </ion-view>
+                </script>
+
+              <script id="favourite.html" type="text/ng-template">
+                <ion-view title="IN PROGRESS" left-buttons="leftButtons">
+                  <ion-content>
+                   
+
+                       <div class="card">
+						  <div class="item item-text-wrap">
+						 
+							Water Sample 1 
+							<span class="item-note">
+							  89%
+							</span>
+						  </div>
+						</div>
+
+                         <div class="card">
+						  <div class="item item-text-wrap">
+							Water Sample 2 
+							<span class="item-note">
+							  53%
+							</span>
+						  </div>
+						</div>
+
+						 <div class="card">
+						  <div class="item item-text-wrap">
+							Water Sample 4 
+							<span class="item-note">
+							  29%
+							</span>
+						  </div>
+						</div>
+							 <div class="card">
+						  <div class="item item-text-wrap">
+							Water Sample 5 
+							<span class="item-note">
+							  74%
+							</span>
+						  </div>
+						</div>
+						 <div class="card">
+						  <div class="item item-text-wrap">
+							Water Sample 6 
+							<span class="item-note">
+							  10%
+							</span>
+						  </div>
+						</div>
+                     <div class="card">
+						  <div class="item item-text-wrap">
+							Water Sample 7
+							<span class="item-note">
+							  60%
+							</span>
+						  </div>
+						</div>
+                  </ion-content>
+                </ion-view>
+              </script>
+              <script id="location.html" type="text/ng-template">
+               
+                <ion-view title="SAMPLE Location">
+                  <ion-content>
+                      <div id="map" style="width:100%;height:100%;" ></div>
+                    </ion-content>
+                    <ion-footer-bar class="bar-positive">
+                      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+                    </ion-footer-bar>
+                    </ion-view>
+              </script>
+    
+    
+    
+    
+    
+    <script src="http://use.edgefonts.net/quicksand:i4,n3,i7,n7,n4,i3:all.js"></script>
+   
+<!--    <script src="/lib/ionic/js/ionic.bundle.js"></script>-->
+    
+    <script src="js/order.js"></script>
+    
+    
+    
   </body>
 </html>
